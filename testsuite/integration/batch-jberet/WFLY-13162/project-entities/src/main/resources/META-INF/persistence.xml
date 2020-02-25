@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+	<persistence-unit name="primary" transaction-type="JTA">
+		<jta-data-source>jdbc/postgresql</jta-data-source>
+		<shared-cache-mode>DISABLE_SELECTIVE</shared-cache-mode>
+		<properties>
+			<property name="hibernate.batch_fetch_style" value="PADDED" />
+			<property name="hibernate.cache.use_second_level_cache" value="${project/entity.cache.enabled:true}" />
+			<property name="hibernate.cache.use_query_cache" value="${project/entity.cache.enabled:true}" />
+			<property name="hibernate.cache.use_minimal_puts" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>

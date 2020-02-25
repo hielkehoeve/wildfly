@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+ http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd"
+	version="2.1">
+	<persistence-unit-metadata>
+		<persistence-unit-defaults>
+			<entity-listeners>
+				<entity-listener class="org.wildfly.dao.listener.ExcessiveLoadListener" />
+				<entity-listener class="org.wildfly.dao.listener.AuditListener" />
+			</entity-listeners>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<sql-result-set-mapping name="ids">
+		<column-result name="id" />
+	</sql-result-set-mapping>
+	<sql-result-set-mapping name="none">
+	</sql-result-set-mapping>
+</entity-mappings>

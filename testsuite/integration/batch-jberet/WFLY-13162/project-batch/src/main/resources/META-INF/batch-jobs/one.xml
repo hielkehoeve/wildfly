@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<job id="one" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	restartable="false" version="1.0">
+
+	<step id="one">
+		<chunk>
+			<reader ref="reader" />
+			<processor ref="processor" />
+			<writer ref="writer" />
+		</chunk>
+	</step>
+</job>

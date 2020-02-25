@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.wildfly</groupId>
+		 <artifactId>wildfly-parent</artifactId>
+		<version>18.0.2.Final-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>project-backend</artifactId>
+	<packaging>pom</packaging>
+	<name>project Backend Parent POM</name>
+
+	<modules>
+		<module>project-common</module>
+		<module>project-entities</module>
+		<module>project-dao</module>
+
+		<module>project-a</module>
+		<module>project-b</module>
+		<module>project-d</module>
+		<module>project-e</module>
+		<module>project-f</module>
+		<module>project-g</module>
+		<module>project-h</module>
+
+		<module>project-batch</module>
+
+		<module>project-rest</module>
+		<module>project-ear</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-a</artifactId>
+				<version>${project.version}</version>				
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-batch</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-common</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-dao</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-ear</artifactId>
+				<version>${project.version}</version>
+				<type>ear</type>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-entities</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-d</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-e</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-f</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-g</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-h</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-rest</artifactId>
+				<version>${project.version}</version>
+				<type>war</type>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.wildfly</groupId>
+				<artifactId>project-b</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

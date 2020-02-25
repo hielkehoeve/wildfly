@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure>
+	<deployment>
+		<dependencies>
+			<module name="javax.batch.api" export="true" />
+		</dependencies>
+		<exclusions>
+			<module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jdk8" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" />
+			<module name="org.jboss.resteasy.resteasy-json-binding-provider"/>
+		</exclusions>
+	</deployment>
+	<sub-deployment name="project-batch.jar">
+		<exclusions>
+			<module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jdk8" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" />
+			<module name="org.jboss.resteasy.resteasy-json-binding-provider"/>
+		</exclusions>
+	</sub-deployment>
+	<sub-deployment name="project-dao.jar">
+		<exclusions>
+			<module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jdk8" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" />
+			<module name="org.jboss.resteasy.resteasy-json-binding-provider"/>
+		</exclusions>
+	</sub-deployment>
+	<sub-deployment name="project-e.jar">
+		<exclusions>
+			<module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jdk8" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" />
+			<module name="org.jboss.resteasy.resteasy-json-binding-provider"/>
+		</exclusions>
+	</sub-deployment>
+	<sub-deployment name="project-d.jar">
+		<exclusions>
+			<module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jdk8" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" />
+			<module name="org.jboss.resteasy.resteasy-json-binding-provider"/>
+		</exclusions>
+	</sub-deployment>
+	<sub-deployment name="project-f.jar">
+		<exclusions>
+			<module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jdk8" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" />
+			<module name="org.jboss.resteasy.resteasy-json-binding-provider"/>
+		</exclusions>
+	</sub-deployment>
+	<sub-deployment name="project-g.jar">
+		<exclusions>
+			<module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jdk8" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" />
+			<module name="org.jboss.resteasy.resteasy-json-binding-provider"/>
+		</exclusions>
+	</sub-deployment>
+	<sub-deployment name="project-h.jar">
+		<exclusions>
+			<module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jdk8" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" />
+			<module name="org.jboss.resteasy.resteasy-json-binding-provider"/>
+		</exclusions>
+	</sub-deployment>
+	<sub-deployment name="project-rest.war">
+		<exclusions>
+			<module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jdk8" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" />
+			<module name="org.jboss.resteasy.resteasy-json-binding-provider"/>
+		</exclusions>
+	</sub-deployment>
+	<sub-deployment name="project-b.jar">
+		<exclusions>
+			<module name="org.jboss.resteasy.resteasy-jackson2-provider" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jdk8" />
+			<module name="com.fasterxml.jackson.datatype.jackson-datatype-jsr310" />
+			<module name="org.jboss.resteasy.resteasy-json-binding-provider"/>
+		</exclusions>
+	</sub-deployment>
+</jboss-deployment-structure>
