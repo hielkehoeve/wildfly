@@ -71,8 +71,8 @@ public class WildFlyJobXmlResolver implements JobXmlResolver {
 
     private WildFlyJobXmlResolver(final Map<String, VirtualFile> jobXmlFiles) {
         jobXmlNames = new LinkedHashMap<>();
-        jobXmlResolvers = new LinkedHashSet<>();
-        jobNames = new LinkedHashMap<>();
+        jobXmlResolvers = Collections.synchronizedSet(new LinkedHashSet<>());
+        jobNames = Collections.synchronizedMap(new LinkedHashMap<>());
         this.jobXmlFiles = jobXmlFiles;
     }
 
@@ -249,16 +249,24 @@ public class WildFlyJobXmlResolver implements JobXmlResolver {
     }
 
     private static void merge(final WildFlyJobXmlResolver target, final WildFlyJobXmlResolver toCopy) {
-        for (Map.Entry<String, Set<String>> entry : toCopy.jobNames.entrySet()) {
-            if (target.jobNames.containsKey(entry.getKey())) {
-                target.jobNames.get(entry.getKey()).addAll(entry.getValue());
-            } else {
-                target.jobNames.put(entry.getKey(), entry.getValue());
+        synchronized(toCopy.jobNames) {
+            for (Map.Entry<String, Set<String>> entry : toCopy.jobNames.entrySet()) {
+                if (target.jobNames.containsKey(entry.getKey())) {
+                    target.jobNames.get(entry.getKey()).addAll(entry.getValue());
+                } else {
+                    target.jobNames.put(entry.getKey(), entry.getValue());
+                }
             }
         }
-        toCopy.jobXmlNames.forEach(target.jobXmlNames::putIfAbsent);
-        toCopy.jobXmlFiles.forEach(target.jobXmlFiles::putIfAbsent);
-        target.jobXmlResolvers.addAll(toCopy.jobXmlResolvers);
+        synchronized(toCopy.jobNames) {
+            toCopy.jobXmlNames.forEach(target.jobXmlNames::putIfAbsent);
+        }
+        synchronized(toCopy.jobNames) {
+            toCopy.jobXmlFiles.forEach(target.jobXmlFiles::putIfAbsent);
+        }
+        synchronized(toCopy.jobNames) {
+            target.jobXmlResolvers.addAll(toCopy.jobXmlResolvers);
+        }
     }
 
     /**
